@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+<div class="row">
+  <div class="col-sm-4.5">
+    <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <div class="card">
+      <div class="card-body">
+        <img class="content-image" src="{{book.img.url}}" width="300px" height="512px">
+      </div>
+    </div></div>
+  </div>
+  <div class="col-sm-1"></div>
+  <div class="col-sm-7">
+    <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); height:35.4rem;">
+      <div class="card-body" height="100%">
+        <br><h4 class="card-title"><br><b>{{book.name}}</b></h4><br><br>
+        <p class="card-text" style=" margin:0px 40px;">{{book.desc}}</p><br>
+        <p class="card-text"><i><b>First published - {{book.year}}</b></i></p><br>
+        <a href="{% url 'Demoprodapp:update' book.id %}" class="btn btn-warning">Update</a>&nbsp&nbsp
+        <a href="{% url 'Demoprodapp:delete' book.id %}" class="btn btn-danger">Delete</a><br><br>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+{% endblock %}
+<br><img src="{{book.img.url}}" width="100" height="120">
+ - <br>
+<br><br>
+<a class="btn btn-warning" href="">Update</a>
+<a class="btn btn-danger" href="">Delete</a>
